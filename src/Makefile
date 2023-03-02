@@ -1,18 +1,17 @@
+
 #compiler Flags
-all: program
+OBJS = program.o tokenizer.o history.o
 
-tokenizer.o: tokenizer.h
-history.o: history.h
+CFLAGS=-g -O3
 
-program: program.o history.o tokenizer.o
-	cc -o $@ $^ $(CFLAGS)
-
-
+all: lab1
+lab1: $(OBJS)
+	cc -o lab1 $(CFLAGS) $(OBJS)
 clean:
-	rm -f *.o program
-run: program
-	./program
+	rm -f *.o *.c~
 
+run: lab1
+	./lab1
 
 
 
