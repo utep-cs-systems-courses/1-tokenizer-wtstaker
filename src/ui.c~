@@ -1,0 +1,17 @@
+#include "string.h"
+#include "stdio.h"
+
+int main(){
+
+  char str[400];
+  while(1){
+
+    printf(">");
+    fgets(str, 400, stdin);
+    if(strcmp(str,q)==10){
+      printf("Quitting");
+      return(0)
+    }
+    fputs(str,stdout);
+  }
+}
